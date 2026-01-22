@@ -57,4 +57,8 @@ class HypothesesUpdaterChannelTelemetryTest(TestCase):
                 "locations": [0, 1],
                 "pose_errors": [0, 1],
             },
+<<<<<<< Updated upstream
         )
+=======
+        )
+>>>>>>> Stashed changes

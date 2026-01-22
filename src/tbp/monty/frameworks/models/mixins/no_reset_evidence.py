@@ -203,4 +203,8 @@ class TheoreticalLimitLMLoggingMixin:
 
         obj_rotation = self.get_mlh_for_object(self.primary_target)["rotation"].inv()
         target_rotation = Rotation.from_quat(self.primary_target_rotation_quat)
+<<<<<<< Updated upstream
         return compute_pose_error(obj_rotation, target_rotation)
+=======
+        return compute_pose_error(obj_rotation, target_rotation)
+>>>>>>> Stashed changes

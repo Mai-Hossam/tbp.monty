@@ -74,4 +74,8 @@ def rotation_from_quat(quat: ArrayLike, scalar_first: bool = True) -> Rotation:
     quat = np.asarray(quat)
     if scalar_first:
         quat = quat[..., [1, 2, 3, 0]]
+<<<<<<< Updated upstream
     return Rotation.from_quat(quat)
+=======
+    return Rotation.from_quat(quat)
+>>>>>>> Stashed changes

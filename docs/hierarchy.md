@@ -24,6 +24,7 @@
 - [getting-started](how-to-use-monty/getting-started.md)
   - [getting-started-on-windows-via-wsl](how-to-use-monty/getting-started/getting-started-on-windows-via-wsl.md)
 - [code-base-structure](how-to-use-monty/code-base-structure.md)
+- [getting-started-on-windows-via-wsl](how-to-use-monty/getting-started/getting-started-on-windows-via-wsl.md)
 - [running-benchmarks](how-to-use-monty/running-benchmarks.md)
 - [logging-and-analysis](how-to-use-monty/logging-and-analysis.md)
 - [customizing-monty](how-to-use-monty/customizing-monty.md)

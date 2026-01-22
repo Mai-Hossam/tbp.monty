@@ -308,4 +308,8 @@ namespaces = true
 'tbp.monty.simulators.resources' = ['*.json', '*.yml', '*.txt']
 
 [tool.uv]
+<<<<<<< Updated upstream
 no-build-isolation-package = ["torch-scatter", "torch-sparse"]
+=======
+no-build-isolation-package = ["torch-scatter", "torch-sparse"]
+>>>>>>> Stashed changes

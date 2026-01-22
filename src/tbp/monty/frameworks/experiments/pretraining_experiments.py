@@ -18,6 +18,7 @@ from scipy.spatial.transform import Rotation
 from tbp.monty.frameworks.environments.embodied_data import (
     SaccadeOnImageEnvironmentInterface,
 )
+<<<<<<< Updated upstream
 from tbp.monty.frameworks.experiments.mode import ExperimentMode
 from tbp.monty.frameworks.experiments.monty_experiment import (
     MontyExperiment,
@@ -25,6 +26,13 @@ from tbp.monty.frameworks.experiments.monty_experiment import (
 
 __all__ = ["MontySupervisedObjectPretrainingExperiment"]
 
+=======
+from tbp.monty.frameworks.experiments.monty_experiment import (
+    ExperimentMode,
+    MontyExperiment,
+)
+
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -150,6 +158,7 @@ class MontySupervisedObjectPretrainingExperiment(MontyExperiment):
 
     def pre_episode(self):
         """Pre episode where we pass target object to the model for logging."""
+<<<<<<< Updated upstream
         if self.experiment_mode is ExperimentMode.TRAIN:
             logger.info(
                 f"running train epoch {self.train_epochs} "
@@ -166,6 +175,10 @@ class MontySupervisedObjectPretrainingExperiment(MontyExperiment):
         # TODO: Fix invalid pre_episode signature call
         self.model.pre_episode(self.rng, self.env_interface.primary_target)
         self.env_interface.pre_episode(self.rng)
+=======
+        self.model.pre_episode(self.env_interface.primary_target)
+        self.env_interface.pre_episode()
+>>>>>>> Stashed changes
 
         self.max_steps = self.max_train_steps  # no eval mode here
 
@@ -205,4 +218,8 @@ class MontySupervisedObjectPretrainingExperiment(MontyExperiment):
     def evaluate(self):
         """Use experiment just for supervised pretraining -> no eval."""
         logger.warning("No evalualtion mode for supervised experiment.")
+<<<<<<< Updated upstream
         pass
+=======
+        pass
+>>>>>>> Stashed changes

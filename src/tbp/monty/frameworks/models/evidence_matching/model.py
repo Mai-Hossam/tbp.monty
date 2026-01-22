@@ -131,4 +131,8 @@ class MontyForEvidenceGraphMatching(MontyForGraphMatching):
         # Make sure new object ID gets communicated to higher level LMs during
         # exploration.
         for lm in self.learning_modules:
+<<<<<<< Updated upstream
             lm.current_mlh["evidence"] = lm.object_evidence_threshold + 1
+=======
+            lm.current_mlh["evidence"] = lm.object_evidence_threshold + 1
+>>>>>>> Stashed changes

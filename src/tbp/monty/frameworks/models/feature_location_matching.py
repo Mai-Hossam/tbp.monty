@@ -30,8 +30,11 @@ from tbp.monty.frameworks.utils.spatial_arithmetics import (
     rotate_pose_dependent_features,
 )
 
+<<<<<<< Updated upstream
 __all__ = ["FeatureGraphLM", "FeatureGraphMemory"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -78,7 +81,11 @@ class FeatureGraphLM(GraphLM):
             umbilical_num_poses: Number of samples rotations in the direction
                 of the plane perpendicular to the surface normal.
         """
+<<<<<<< Updated upstream
         super().__init__(rng=rng)
+=======
+        super().__init__()
+>>>>>>> Stashed changes
         self.graph_memory = FeatureGraphMemory(
             graph_delta_thresholds=graph_delta_thresholds,
         )

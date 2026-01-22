@@ -563,4 +563,8 @@ class ReadMe:
 class DocumentNotFound(RuntimeError):
     """Raised when a document is not found."""
 
+<<<<<<< Updated upstream
     pass
+=======
+    pass
+>>>>>>> Stashed changes

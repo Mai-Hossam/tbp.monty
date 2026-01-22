@@ -10,6 +10,11 @@
 import hydra
 import pytest
 
+<<<<<<< Updated upstream
+=======
+from tbp.monty.frameworks.experiments.monty_experiment import ExperimentMode
+
+>>>>>>> Stashed changes
 pytest.importorskip(
     "habitat_sim",
     reason="Habitat Sim optional dependency not installed.",
@@ -18,8 +23,11 @@ pytest.importorskip(
 import shutil
 import tempfile
 import unittest
+<<<<<<< Updated upstream
 
 from tbp.monty.frameworks.experiments.mode import ExperimentMode
+=======
+>>>>>>> Stashed changes
 
 
 class SensorModuleTest(unittest.TestCase):

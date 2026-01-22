@@ -159,4 +159,8 @@ class HabitatEnvironment(SimulatedObjectEnvironment):
         _env = getattr(self, "_env", None)
         if _env is not None:
             _env.close()
+<<<<<<< Updated upstream
             self._env = None
+=======
+            self._env = None
+>>>>>>> Stashed changes

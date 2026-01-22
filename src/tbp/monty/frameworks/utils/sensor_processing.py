@@ -663,4 +663,8 @@ def log_sign(to_scale):
     sign = np.sign(to_scale)  # preserve sign
     abs_vals = np.abs(to_scale)
     log_vals = np.log(abs_vals + 1)  # avoid extreme values around 0
+<<<<<<< Updated upstream
     return sign * log_vals
+=======
+    return sign * log_vals
+>>>>>>> Stashed changes

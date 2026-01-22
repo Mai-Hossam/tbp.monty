@@ -35,6 +35,7 @@ from tbp.monty.frameworks.utils.sensor_processing import (
 )
 from tbp.monty.frameworks.utils.spatial_arithmetics import get_angle
 
+<<<<<<< Updated upstream
 __all__ = [
     "DefaultMessageNoise",
     "FeatureChangeFilter",
@@ -53,6 +54,10 @@ __all__ = [
 
 logger = logging.getLogger(__name__)
 
+=======
+logger = logging.getLogger(__name__)
+
+>>>>>>> Stashed changes
 
 class SnapshotTelemetry:
     """Keeps track of raw observation snapshot telemetry."""
@@ -454,7 +459,11 @@ class Probe(SensorModule):
 
         return None
 
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:  # noqa: ARG002
+=======
+    def pre_episode(self):
+>>>>>>> Stashed changes
         """Reset buffer and is_exploring flag."""
         self._snapshot_telemetry.reset()
         self.is_exploring = False
@@ -567,7 +576,11 @@ class HabitatSM(SensorModule):
 
     def __init__(
         self,
+<<<<<<< Updated upstream
         rng: np.random.RandomState,
+=======
+        rng,
+>>>>>>> Stashed changes
         sensor_module_id: str,
         features: list[str],
         save_raw_obs: bool = False,
@@ -642,8 +655,14 @@ class HabitatSM(SensorModule):
         self.visited_locs = []
         self.visited_normals = []
 
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:
         self._rng = rng
+=======
+    def pre_episode(self):
+        """Reset buffer and is_exploring flag."""
+        super().pre_episode()
+>>>>>>> Stashed changes
         self._snapshot_telemetry.reset()
         self._state_filter.reset()
         self.is_exploring = False
@@ -835,4 +854,8 @@ class FeatureChangeFilter(StateFilter):
         else:
             self._last_sent_n_steps_ago += 1
 
+<<<<<<< Updated upstream
         return state
+=======
+        return state
+>>>>>>> Stashed changes

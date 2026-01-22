@@ -30,8 +30,11 @@ from tbp.monty.frameworks.models.monty_base import MontyBase
 from tbp.monty.frameworks.models.object_model import GraphObjectModel
 from tbp.monty.frameworks.models.states import GoalState
 
+<<<<<<< Updated upstream
 __all__ = ["GraphLM", "GraphMemory", "MontyForGraphMatching"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -557,17 +560,27 @@ class MontyForGraphMatching(MontyBase):
 class GraphLM(LearningModule):
     """General Learning Module that contains a graph memory."""
 
+<<<<<<< Updated upstream
     def __init__(self, rng: np.random.RandomState, initialize_base_modules=True):
         """Initialize general Learning Module based on graphs.
 
         Args:
             rng: The random number generator.
+=======
+    def __init__(self, initialize_base_modules=True):
+        """Initialize general Learning Module based on graphs.
+
+        Args:
+>>>>>>> Stashed changes
             initialize_base_modules: Provides option to not intialize
                 the base modules if more specialized versions will be initialized in
                 child LMs. Defaults to True.
         """
         super().__init__()
+<<<<<<< Updated upstream
         self._rng = rng
+=======
+>>>>>>> Stashed changes
         self.buffer = FeatureAtLocationBuffer()
         self.buffer.reset()
         self.learning_module_id = "LM_0"

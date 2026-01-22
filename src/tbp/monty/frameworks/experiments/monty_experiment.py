@@ -13,6 +13,10 @@ import copy
 import datetime
 import logging
 import pprint
+<<<<<<< Updated upstream
+=======
+from enum import Enum
+>>>>>>> Stashed changes
 from pathlib import Path
 from typing import Any, Literal
 
@@ -45,9 +49,24 @@ from tbp.monty.frameworks.utils.dataclass_utils import (
 )
 from tbp.monty.frameworks.utils.live_plotter import LivePlotter
 
+<<<<<<< Updated upstream
 __all__ = ["MontyExperiment"]
 
 logger = logging.getLogger("tbp.monty")
+=======
+__all__ = ["ExperimentMode", "MontyExperiment"]
+
+logger = logging.getLogger("tbp.monty")
+
+
+class ExperimentMode(Enum):
+    """Experiment mode."""
+
+    EVAL = "eval"
+    """Evaluation mode."""
+    TRAIN = "train"
+    """Training mode."""
+>>>>>>> Stashed changes
 
 
 class MontyExperiment:
@@ -66,6 +85,7 @@ class MontyExperiment:
         """
         self.config = config
 
+<<<<<<< Updated upstream
         self.rng = np.random.RandomState(config["seed"])
 
         self.do_train = config["do_train"]
@@ -118,6 +138,32 @@ class MontyExperiment:
         logger.info(f"resetting RNG to seed {seed}")
         self.rng = np.random.RandomState(seed)
 
+=======
+        self.do_train = config["do_train"]
+        self.do_eval = config["do_eval"]
+        self.experiment_mode = ExperimentMode.TRAIN
+        self.max_eval_steps = config["max_eval_steps"]
+        self.max_train_steps = config["max_train_steps"]
+        self.max_total_steps = config["max_total_steps"]
+        self.n_eval_epochs = config["n_eval_epochs"]
+        self.n_train_epochs = config["n_train_epochs"]
+        if config["model_name_or_path"]:
+            self.model_path = Path(config["model_name_or_path"])
+        else:
+            self.model_path = None
+        self.min_lms_match = config["min_lms_match"]
+        self.rng = np.random.RandomState(config["seed"])
+        self.show_sensor_output = config["show_sensor_output"]
+        self.supervised_lm_ids = config["supervised_lm_ids"]
+        if self.supervised_lm_ids == "all":
+            self.supervised_lm_ids = list(
+                self.config["monty_config"]["learning_module_configs"].keys()
+            )
+
+        if self.show_sensor_output:
+            self.live_plotter = LivePlotter()
+
+>>>>>>> Stashed changes
     def setup_experiment(self, config: dict[str, Any]) -> None:
         """Set up the basic elements of a Monty experiment and initialize counters.
 
@@ -248,7 +294,10 @@ class MontyExperiment:
             env_interface_args = dict(
                 env=self.env,
                 transform=env_interface_config["transform"],
+<<<<<<< Updated upstream
                 experiment_mode=ExperimentMode.TRAIN,
+=======
+>>>>>>> Stashed changes
                 **config["train_env_interface_args"],
             )
 
@@ -264,7 +313,10 @@ class MontyExperiment:
             env_interface_args = dict(
                 env=self.env,
                 transform=env_interface_config["transform"],
+<<<<<<< Updated upstream
                 experiment_mode=ExperimentMode.EVAL,
+=======
+>>>>>>> Stashed changes
                 **config["eval_env_interface_args"],
             )
 
@@ -310,7 +362,11 @@ class MontyExperiment:
         self.total_eval_steps = 0
         self.env_interface = None
         self.eval_epochs = 0
+<<<<<<< Updated upstream
         self.train_epochs = 0
+=======
+        self.env_interface = None
+>>>>>>> Stashed changes
 
     ####
     # Logging
@@ -509,6 +565,7 @@ class MontyExperiment:
 
     def pre_episode(self):
         """Call pre_episode on elements in experiment and set mode."""
+<<<<<<< Updated upstream
         if self.experiment_mode is ExperimentMode.TRAIN:
             logger.info(
                 f"running train epoch {self.train_epochs} "
@@ -524,6 +581,10 @@ class MontyExperiment:
 
         self.model.pre_episode(self.rng)
         self.env_interface.pre_episode(self.rng)
+=======
+        self.model.pre_episode()
+        self.env_interface.pre_episode()
+>>>>>>> Stashed changes
 
         self.max_steps = self.max_train_steps
         if self.experiment_mode is not ExperimentMode.TRAIN:
@@ -585,10 +646,13 @@ class MontyExperiment:
 
     def pre_epoch(self):
         """Set environment interface and call sub pre_epoch functions."""
+<<<<<<< Updated upstream
         if self.experiment_mode is ExperimentMode.TRAIN:
             logger.info(f"running train epoch {self.train_epochs}")
         else:
             logger.info(f"running eval epoch {self.eval_epochs}")
+=======
+>>>>>>> Stashed changes
         self.env_interface = self.train_env_interface
         if self.experiment_mode is not ExperimentMode.TRAIN:
             self.env_interface = self.eval_env_interface

@@ -142,4 +142,8 @@ Use your judgement to assign the Pull Request to one or more **Maintainers** for
 
 Use your judgement to request a review for the Pull Request from one or more people (this is the [GitHub Reviewers feature](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)).
 
+<<<<<<< Updated upstream
 If you feel that someone should be notified of the Issue, make a comment and mention them in the comment.
+=======
+If you feel that someone should be notified of the Issue, make a comment and mention them in the comment.
+>>>>>>> Stashed changes

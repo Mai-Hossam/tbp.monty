@@ -203,4 +203,8 @@ html_show_sphinx = False
 
 always_use_bars_union = True
 typehints_use_signature = True
+<<<<<<< Updated upstream
 typehints_use_signature_return = True
+=======
+typehints_use_signature_return = True
+>>>>>>> Stashed changes

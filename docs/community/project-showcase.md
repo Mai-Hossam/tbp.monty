@@ -42,4 +42,8 @@ See the [ultrasound_perception repository](https://github.com/thousandbrainsproj
 
 Watch the video:
 
+<<<<<<< Updated upstream
 [2025-05 Ultrasound Presentation and Demo](https://www.youtube.com/watch?v=-zrq0oTJudo)
+=======
+[2025-05 Ultrasound Presentation and Demo](https://www.youtube.com/watch?v=-zrq0oTJudo)
+>>>>>>> Stashed changes

@@ -119,4 +119,8 @@ class MuJoCoSimulatorTestCase(ParametrizedTestCase):
         world_body = parsed_xml.find("worldbody")
         if world_body is None:
             pytest.fail("Couldn't find <worldbody> in MuJoCo spec")
+<<<<<<< Updated upstream
         return world_body.findall("geom")
+=======
+        return world_body.findall("geom")
+>>>>>>> Stashed changes

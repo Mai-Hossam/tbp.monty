@@ -141,4 +141,8 @@ class MuJoCoSimulator(Simulator):
         return Observations({}), ProprioceptiveState({})
 
     def close(self) -> None:
+<<<<<<< Updated upstream
         pass
+=======
+        pass
+>>>>>>> Stashed changes

@@ -96,4 +96,8 @@ class MotorSystemState(Dict[AgentID, AgentState]):
                 "sensors": sensors,
             }
 
+<<<<<<< Updated upstream
         return state_copy
+=======
+        return state_copy
+>>>>>>> Stashed changes

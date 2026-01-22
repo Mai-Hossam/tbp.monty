@@ -478,4 +478,8 @@ class BaseGraphTest(TestCase):
                             np_old = np.array(step_old[key3])
                             np_new = np.array(step_new[key3])
                             np_equal = np.isclose(np_old, np_new, atol=0.00001)
+<<<<<<< Updated upstream
                             self.assertEqual(np.sum(np_equal), np_equal.size)
+=======
+                            self.assertEqual(np.sum(np_equal), np_equal.size)
+>>>>>>> Stashed changes

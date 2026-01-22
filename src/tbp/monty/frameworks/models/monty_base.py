@@ -12,15 +12,21 @@ from __future__ import annotations
 import logging
 from typing import ClassVar
 
+<<<<<<< Updated upstream
 import numpy as np
 
+=======
+>>>>>>> Stashed changes
 from tbp.monty.frameworks.loggers.exp_logger import BaseMontyLogger, TestLogger
 from tbp.monty.frameworks.models.abstract_monty_classes import Monty
 from tbp.monty.frameworks.models.motor_system import MotorSystem
 from tbp.monty.frameworks.utils.communication_utils import get_first_sensory_state
 
+<<<<<<< Updated upstream
 __all__ = ["MontyBase"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -283,12 +289,23 @@ class MontyBase(Monty):
         # to revisit this with heterarchy if we have some LMs that are being stepped
         # at higher frequencies than others.
 
+<<<<<<< Updated upstream
         for lm in self.learning_modules:
             goal_states = lm.propose_goal_states()
             self.gsg_outputs.extend(goal_states)
         for sm in self.sensor_modules:
             goal_states = sm.propose_goal_states()
             self.gsg_outputs.extend(goal_states)
+=======
+        # Currently only use GSG outputs at inference
+        if self.step_type == "matching_step":
+            for lm in self.learning_modules:
+                goal_states = lm.propose_goal_states()
+                self.gsg_outputs.extend(goal_states)
+            for sm in self.sensor_modules:
+                goal_states = sm.propose_goal_states()
+                self.gsg_outputs.extend(goal_states)
+>>>>>>> Stashed changes
 
     def _pass_infos_to_motor_system(self):
         """Pass input observations and goal states to the motor system."""
@@ -489,4 +506,8 @@ class MontyBase(Monty):
     def switch_to_exploratory_step(self):
         self.step_type = "exploratory_step"
         self.is_seeking_match = False
+<<<<<<< Updated upstream
         logger.info(f"Going into exploratory mode after {self.matching_steps} steps")
+=======
+        logger.info(f"Going into exploratory mode after {self.matching_steps} steps")
+>>>>>>> Stashed changes

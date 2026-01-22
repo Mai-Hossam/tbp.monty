@@ -180,4 +180,8 @@ class NoActionParameters(Exception):
     """Raised when an action has no parameters."""
 
     def __init__(self, action_name: str):
+<<<<<<< Updated upstream
         super().__init__(f"No action parameters for action: {action_name}")
+=======
+        super().__init__(f"No action parameters for action: {action_name}")
+>>>>>>> Stashed changes

@@ -41,4 +41,8 @@ class FakeAction(Action):
         super().__init__(agent_id=agent_id)
 
     def act(self, _: FakeActionActuator) -> None:
+<<<<<<< Updated upstream
         pass
+=======
+        pass
+>>>>>>> Stashed changes

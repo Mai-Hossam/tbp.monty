@@ -188,4 +188,8 @@ class EvidenceGraphMemory(GraphMemory):
                 f"{self.models_in_memory[graph_id]}"
             )
         except GridTooSmallError:
+<<<<<<< Updated upstream
             logger.info("Grid too small for given locations. Not updating model.")
+=======
+            logger.info("Grid too small for given locations. Not updating model.")
+>>>>>>> Stashed changes

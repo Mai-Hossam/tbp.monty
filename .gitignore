@@ -143,4 +143,8 @@ Session.vim
 .rsyncignore.local
 
 # hydra
+<<<<<<< Updated upstream
 outputs/
+=======
+outputs/
+>>>>>>> Stashed changes

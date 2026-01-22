@@ -74,4 +74,8 @@ def read_file_content(file_path: str) -> str:
         File content as string
     """
     with Path(file_path).open(encoding="utf-8") as f:
+<<<<<<< Updated upstream
         return f.read()
+=======
+        return f.read()
+>>>>>>> Stashed changes

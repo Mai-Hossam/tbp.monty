@@ -49,4 +49,8 @@ dependencies:
 
   - pip
   - pip:
+<<<<<<< Updated upstream
       - -e .[dev]
+=======
+      - -e .[dev]
+>>>>>>> Stashed changes

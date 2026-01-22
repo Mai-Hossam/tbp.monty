@@ -542,4 +542,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test_coverage_uv
+<<<<<<< Updated upstream
           path: tbp.monty/htmlcov
+=======
+          path: tbp.monty/htmlcov
+>>>>>>> Stashed changes

@@ -120,4 +120,8 @@ jobs:
           git_base_ref: ${{ github.base_ref }}
           git_sha: ${{ github.event.merge_group.head_sha || github.sha }}
           github_event_name: ${{ github.event_name }}
+<<<<<<< Updated upstream
           working_directory: tbp.monty
+=======
+          working_directory: tbp.monty
+>>>>>>> Stashed changes

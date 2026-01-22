@@ -65,4 +65,8 @@ def main(cfg: DictConfig):
     with experiment:
         experiment.run()
 
+<<<<<<< Updated upstream
     logger.info(f"Done running {experiment} in {time.time() - start_time} seconds")
+=======
+    logger.info(f"Done running {experiment} in {time.time() - start_time} seconds")
+>>>>>>> Stashed changes

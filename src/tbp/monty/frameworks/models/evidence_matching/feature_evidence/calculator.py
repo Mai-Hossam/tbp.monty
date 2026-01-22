@@ -100,4 +100,8 @@ class DefaultFeatureEvidenceCalculator:
         feature_evidence = np.clip(tolerance_list - feature_differences, 0, np.inf)
         # normalize evidence to be in [0, 1]
         feature_evidence = feature_evidence / tolerance_list
+<<<<<<< Updated upstream
         return np.average(feature_evidence, weights=feature_weight_list, axis=1)
+=======
+        return np.average(feature_evidence, weights=feature_weight_list, axis=1)
+>>>>>>> Stashed changes

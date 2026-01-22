@@ -60,4 +60,8 @@ def delete(url: str, headers=None):
     headers["Authorization"] = f"Basic {os.getenv('README_API_KEY')}"
     response = requests.delete(url, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS)
     logging.debug("delete %s %s", url, response.status_code)
+<<<<<<< Updated upstream
     return 200 <= response.status_code < 300
+=======
+    return 200 <= response.status_code < 300
+>>>>>>> Stashed changes

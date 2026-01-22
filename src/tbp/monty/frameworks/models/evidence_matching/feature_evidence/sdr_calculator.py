@@ -97,4 +97,8 @@ class SDRFeatureEvidenceCalculator:
         normalized_overlaps[normalized_overlaps < 0] = 0.0
 
         normalized_overlaps *= channel_feature_weights["object_id"]
+<<<<<<< Updated upstream
         return normalized_overlaps
+=======
+        return normalized_overlaps
+>>>>>>> Stashed changes

@@ -43,4 +43,8 @@ class DefaultFeaturesForMatchingSelector:
                 }
                 feature_weights_provided = len(non_morphological_features) > 0
                 use_features[input_channel] = feature_weights_provided
+<<<<<<< Updated upstream
         return use_features
+=======
+        return use_features
+>>>>>>> Stashed changes

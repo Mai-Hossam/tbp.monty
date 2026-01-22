@@ -10,10 +10,19 @@
 
 import pytest
 
+<<<<<<< Updated upstream
+=======
+from tbp.monty.frameworks.experiments.monty_experiment import ExperimentMode
+
+>>>>>>> Stashed changes
 pytest.importorskip(
     "habitat_sim",
     reason="Habitat Sim optional dependency not installed.",
 )
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 import copy
 import shutil
 import tempfile
@@ -37,7 +46,10 @@ from tbp.monty.frameworks.actions.actions import (
     TurnRight,
 )
 from tbp.monty.frameworks.agents import AgentID
+<<<<<<< Updated upstream
 from tbp.monty.frameworks.experiments.mode import ExperimentMode
+=======
+>>>>>>> Stashed changes
 from tbp.monty.frameworks.models.evidence_matching.learning_module import (
     EvidenceGraphLM,
 )

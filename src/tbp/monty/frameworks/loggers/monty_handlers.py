@@ -27,8 +27,11 @@ from tbp.monty.frameworks.utils.logging_utils import (
     maybe_rename_existing_file,
 )
 
+<<<<<<< Updated upstream
 __all__ = ["BasicCSVStatsHandler", "DetailedJSONHandler", "MontyHandler"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 ###
@@ -67,6 +70,10 @@ class DetailedJSONHandler(MontyHandler):
         self,
         detailed_episodes_to_save: Container[int] | Literal["all"] = "all",
         detailed_save_per_episode: bool = False,
+<<<<<<< Updated upstream
+=======
+        episode_id_parallel: int | None = None,
+>>>>>>> Stashed changes
     ) -> None:
         """Initialize the DetailedJSONHandler.
 
@@ -76,10 +83,19 @@ class DetailedJSONHandler(MontyHandler):
             detailed_save_per_episode: Whether to save individual episode files or
                 consolidate into a single detailed_run_stats.json file.
                 Defaults to False.
+<<<<<<< Updated upstream
+=======
+            episode_id_parallel: Episode id associated with current run,
+                used to identify the episode when using run_parallel.
+>>>>>>> Stashed changes
         """
         self.already_renamed = False
         self.detailed_episodes_to_save = detailed_episodes_to_save
         self.detailed_save_per_episode = detailed_save_per_episode
+<<<<<<< Updated upstream
+=======
+        self.episode_id_parallel = episode_id_parallel
+>>>>>>> Stashed changes
 
     @classmethod
     def log_level(cls):
@@ -94,6 +110,45 @@ class DetailedJSONHandler(MontyHandler):
         return (
             self.detailed_episodes_to_save == "all"
             or global_episode_id in self.detailed_episodes_to_save
+        )
+
+<<<<<<< Updated upstream
+    def get_detailed_stats(
+        self,
+        data,
+        global_episode_id: int,
+        local_episode: int,
+        mode: Literal["train", "eval"],
+    ) -> dict:
+        """Get detailed episode stats.
+
+        Returns:
+            stats: Episode stats.
+        """
+        output_data = {}
+
+        basic_stats = data["BASIC"][f"{mode}_stats"][local_episode]
+        detailed_pool = data["DETAILED"]
+        detailed_stats = detailed_pool.get(local_episode)
+        if detailed_stats is None:
+            detailed_stats = detailed_pool.get(global_episode_id)
+
+=======
+    def get_episode_id(
+        self, local_episode, mode: Literal["train", "eval"], **kwargs
+    ) -> int:
+        """Get global episode id corresponding to a mode-local episode index.
+
+        This function is needed to determine correct episode id when using
+        run_parallel.
+
+        Returns:
+            global_episode_id: Combined train+eval episode id.
+        """
+        return (
+            kwargs[f"{mode}_episodes_to_total"][local_episode]
+            if self.episode_id_parallel is None
+            else self.episode_id_parallel
         )
 
     def get_detailed_stats(
@@ -116,6 +171,7 @@ class DetailedJSONHandler(MontyHandler):
         if detailed_stats is None:
             detailed_stats = detailed_pool.get(global_episode_id)
 
+>>>>>>> Stashed changes
         output_data[global_episode_id] = copy.deepcopy(basic_stats)
         output_data[global_episode_id].update(detailed_stats)
 
@@ -123,7 +179,11 @@ class DetailedJSONHandler(MontyHandler):
 
     def report_episode(self, data, output_dir, local_episode, mode="train", **kwargs):
         """Report episode data."""
+<<<<<<< Updated upstream
         global_episode_id = kwargs[f"{mode}_episodes_to_total"][local_episode]
+=======
+        global_episode_id = self.get_episode_id(local_episode, mode, **kwargs)
+>>>>>>> Stashed changes
 
         if not self._should_save_episode(global_episode_id):
             logger.debug(
@@ -279,3 +339,45 @@ class BasicCSVStatsHandler(MontyHandler):
 
     def close(self):
         pass
+<<<<<<< Updated upstream
+=======
+
+
+class ReproduceEpisodeHandler(MontyHandler):
+    @classmethod
+    def log_level(cls):
+        return "BASIC"
+
+    @override
+    def report_episode(self, data, output_dir, episode, mode="train", **kwargs):
+        # Set up data directory with reproducibility info for each episode
+        if not hasattr(self, "data_dir"):
+            self.data_dir = Path(output_dir) / "reproduce_episode_data"
+            self.data_dir.mkdir(exist_ok=True, parents=True)
+
+        # TODO: store a pointer to the training model
+        # something like if train_epochs == 0:
+        #   use model_name_or_path
+        # else:
+        #   get checkpoint of most up to date model
+
+        # Write data to action file
+        action_file = f"{mode}_episode_{episode}_actions.jsonl"
+        action_file_path = self.data_dir / action_file
+        actions = data["BASIC"][f"{mode}_actions"][episode]
+        with action_file_path.open("w") as f:
+            f.writelines(
+                f"{json.dumps(action[0], cls=ActionJSONEncoder)}\n"
+                for action in actions
+            )
+
+        # Write data to object params / targets file
+        object_file = f"{mode}_episode_{episode}_target.txt"
+        object_file_path = self.data_dir / object_file
+        target = data["BASIC"][f"{mode}_targets"][episode]
+        with object_file_path.open("w") as f:
+            json.dump(target, f, cls=BufferEncoder)
+
+    def close(self):
+        pass
+>>>>>>> Stashed changes

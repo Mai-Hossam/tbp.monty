@@ -15,6 +15,7 @@ import torch
 from tbp.monty.frameworks.environments.embodied_data import (
     SaccadeOnImageEnvironmentInterface,
 )
+<<<<<<< Updated upstream
 from tbp.monty.frameworks.experiments.mode import ExperimentMode
 from tbp.monty.frameworks.experiments.monty_experiment import (
     MontyExperiment,
@@ -22,6 +23,13 @@ from tbp.monty.frameworks.experiments.monty_experiment import (
 
 __all__ = ["MontyGeneralizationExperiment", "MontyObjectRecognitionExperiment"]
 
+=======
+from tbp.monty.frameworks.experiments.monty_experiment import (
+    ExperimentMode,
+    MontyExperiment,
+)
+
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -49,6 +57,7 @@ class MontyObjectRecognitionExperiment(MontyExperiment):
         Pre episode where we pass the primary target object, as well as the mapping
         between semantic ID to labels, both for logging/evaluation purposes.
         """
+<<<<<<< Updated upstream
         if self.experiment_mode is ExperimentMode.TRAIN:
             logger.info(
                 f"running train epoch {self.train_epochs} "
@@ -77,6 +86,20 @@ class MontyObjectRecognitionExperiment(MontyExperiment):
             # TODO: Fix invalid pre_episode signature call
             self.model.pre_episode(self.rng, self.env_interface.primary_target)
         self.env_interface.pre_episode(self.rng)
+=======
+        # TODO, eventually it would be better to pass
+        # self.env_interface.semantic_id_to_label via an "Observation" object when this
+        # is eventually implemented, such that we can ensure this information is never
+        # inappropriately accessed and used
+        if hasattr(self.env_interface, "semantic_id_to_label"):
+            self.model.pre_episode(
+                self.env_interface.primary_target,
+                self.env_interface.semantic_id_to_label,
+            )
+        else:
+            self.model.pre_episode(self.env_interface.primary_target)
+        self.env_interface.pre_episode()
+>>>>>>> Stashed changes
 
         self.max_steps = self.max_train_steps
         if self.experiment_mode is not ExperimentMode.TRAIN:

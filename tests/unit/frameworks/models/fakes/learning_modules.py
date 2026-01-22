@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Copyright 2025-2026 Thousand Brains Project
+=======
+# Copyright 2025 Thousand Brains Project
+>>>>>>> Stashed changes
 # Copyright 2022-2024 Numenta Inc.
 #
 # Copyright may exist in Contributors' modifications
@@ -9,6 +13,7 @@
 # https://opensource.org/licenses/MIT.
 from __future__ import annotations
 
+<<<<<<< Updated upstream
 import numpy as np
 
 from tbp.monty.frameworks.models.abstract_monty_classes import LearningModule
@@ -16,11 +21,20 @@ from tbp.monty.frameworks.models.states import GoalState
 
 __all__ = ["FakeLearningModule"]
 
+=======
+from tbp.monty.frameworks.models.abstract_monty_classes import LearningModule
+from tbp.monty.frameworks.models.states import GoalState
+
+>>>>>>> Stashed changes
 
 class FakeLearningModule(LearningModule):
     """Dummy placeholder class used only for tests."""
 
+<<<<<<< Updated upstream
     def __init__(self, rng: np.random.RandomState):  # noqa: ARG002
+=======
+    def __init__(self):
+>>>>>>> Stashed changes
         self.test_attr_1 = True
         self.test_attr_2 = True
 
@@ -46,7 +60,11 @@ class FakeLearningModule(LearningModule):
         self.test_attr_1 = state_dict["test_attr_1"]
         self.test_attr_2 = state_dict["test_attr_2"]
 
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:
+=======
+    def pre_episode(self):
+>>>>>>> Stashed changes
         pass
 
     def post_episode(self):
@@ -59,4 +77,8 @@ class FakeLearningModule(LearningModule):
         return []
 
     def get_output(self):
+<<<<<<< Updated upstream
         pass
+=======
+        pass
+>>>>>>> Stashed changes

@@ -698,4 +698,8 @@ class DepthTo3DLocations(Transform):
 class NoDepthSensorPresent(RuntimeError):
     """Raised when a depth sensor is expected but not found."""
 
+<<<<<<< Updated upstream
     pass
+=======
+    pass
+>>>>>>> Stashed changes

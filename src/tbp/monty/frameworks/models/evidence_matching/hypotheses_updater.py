@@ -425,4 +425,8 @@ def all_usable_input_channels(
     # NOTE: We might also want to check the confidence in the input channel
     # features. This information is currently not available here.
     # TODO S: Once we pull the observation class into the LM we could add this.
+<<<<<<< Updated upstream
     return [ic for ic in features.keys() if ic in all_input_channels]
+=======
+    return [ic for ic in features.keys() if ic in all_input_channels]
+>>>>>>> Stashed changes

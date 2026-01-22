@@ -43,8 +43,11 @@ from tbp.monty.frameworks.utils.graph_matching_utils import (
     get_scaled_evidences,
 )
 
+<<<<<<< Updated upstream
 __all__ = ["EvidenceGraphLM"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -152,7 +155,10 @@ class EvidenceGraphLM(GraphLM):
 
     def __init__(
         self,
+<<<<<<< Updated upstream
         rng: np.random.RandomState,
+=======
+>>>>>>> Stashed changes
         max_match_distance,
         tolerances: dict,
         feature_weights: dict,
@@ -180,7 +186,11 @@ class EvidenceGraphLM(GraphLM):
         **kwargs,
     ) -> None:
         kwargs["initialize_base_modules"] = False
+<<<<<<< Updated upstream
         super().__init__(rng, *args, **kwargs)
+=======
+        super().__init__(*args, **kwargs)
+>>>>>>> Stashed changes
         # --- LM components ---
         self.graph_memory = EvidenceGraphMemory(
             graph_delta_thresholds=graph_delta_thresholds,
@@ -1287,4 +1297,8 @@ class EvidenceGraphLM(GraphLM):
             stats["possible_rotations"] = self.get_possible_poses(as_euler=False)
         stats["evidences"] = self.evidence
         stats["symmetry_evidence"] = self.symmetry_evidence
+<<<<<<< Updated upstream
         return stats
+=======
+        return stats
+>>>>>>> Stashed changes

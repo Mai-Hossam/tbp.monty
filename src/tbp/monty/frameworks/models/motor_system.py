@@ -10,8 +10,11 @@
 from __future__ import annotations
 
 from typing import Literal
+<<<<<<< Updated upstream
 
 import numpy as np
+=======
+>>>>>>> Stashed changes
 
 from tbp.monty.frameworks.actions.actions import Action
 from tbp.monty.frameworks.models.motor_policies import MotorPolicy
@@ -60,4 +63,8 @@ class MotorSystem:
         Returns:
             The action to take.
         """
+<<<<<<< Updated upstream
         return self._policy(self._state)
+=======
+        return self._policy(self._state)
+>>>>>>> Stashed changes

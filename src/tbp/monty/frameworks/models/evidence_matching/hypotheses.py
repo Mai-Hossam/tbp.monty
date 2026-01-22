@@ -30,4 +30,8 @@ class Hypotheses:
 class ChannelHypotheses(Hypotheses):
     """A set of hypotheses for a single input channel."""
 
+<<<<<<< Updated upstream
     input_channel: str
+=======
+    input_channel: str
+>>>>>>> Stashed changes

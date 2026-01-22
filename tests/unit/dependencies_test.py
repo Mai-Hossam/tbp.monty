@@ -15,4 +15,8 @@ class DependenciesTest(unittest.TestCase):
     def test_torch_geometric(self):
         import torch_geometric  # noqa: F401, PLC0415
         import torch_geometric.data  # noqa: F401, PLC0415
+<<<<<<< Updated upstream
         import torch_geometric.typing  # noqa: F401, PLC0415
+=======
+        import torch_geometric.typing  # noqa: F401, PLC0415
+>>>>>>> Stashed changes

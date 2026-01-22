@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Copyright 2025-2026 Thousand Brains Project
+=======
+# Copyright 2025 Thousand Brains Project
+>>>>>>> Stashed changes
 #
 # Copyright may exist in Contributors' modifications
 # and/or contributions to the work.
@@ -15,8 +19,11 @@ from tbp.monty.frameworks.models.abstract_monty_classes import SensorModule
 from tbp.monty.frameworks.models.motor_system_state import AgentState
 from tbp.monty.frameworks.models.states import State
 
+<<<<<<< Updated upstream
 __all__ = ["FakeSensorModule"]
 
+=======
+>>>>>>> Stashed changes
 
 class FakeSensorModule(SensorModule):
     """Dummy placeholder class used only for tests."""
@@ -35,7 +42,11 @@ class FakeSensorModule(SensorModule):
     def update_state(self, agent: AgentState):
         pass
 
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:
+=======
+    def pre_episode(self):
+>>>>>>> Stashed changes
         pass
 
     def post_episode(self):
@@ -57,4 +68,8 @@ class FakeSensorModule(SensorModule):
             use_state=True,
             sender_id=self.sensor_module_id,
             sender_type="SM",
+<<<<<<< Updated upstream
         )
+=======
+        )
+>>>>>>> Stashed changes

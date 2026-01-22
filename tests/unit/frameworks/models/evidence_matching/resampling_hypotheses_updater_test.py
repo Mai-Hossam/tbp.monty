@@ -137,11 +137,16 @@ class ResamplingHypothesesUpdaterTest(TestCase):
                 pose_defined=pose_defined,
                 graph_id=graph_id,
             )
+<<<<<<< Updated upstream
             # +/- 1 due to rounding errors in _sample_count
             self.assertAlmostEqual(
                 before_count * count_multiplier,
                 (existing_count + informed_count),
                 delta=1,
+=======
+            self.assertEqual(
+                before_count * count_multiplier, (existing_count + informed_count)
+>>>>>>> Stashed changes
             )
 
         # Reset mapper
@@ -359,4 +364,8 @@ class ResamplingHypothesesUpdaterUnitTestCase(TestCase):
         )
 
         assert_array_equal(channel_hyps[0].possible, np.array([True, False]))
+<<<<<<< Updated upstream
         assert_array_equal(channel_hyps[0].evidence, np.array([1, 2]))
+=======
+        assert_array_equal(channel_hyps[0].evidence, np.array([1, 2]))
+>>>>>>> Stashed changes

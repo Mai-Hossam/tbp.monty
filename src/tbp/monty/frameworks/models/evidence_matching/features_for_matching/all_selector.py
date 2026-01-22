@@ -33,4 +33,8 @@ class AllFeaturesForMatchingSelector:
                 use_features[input_channel] = False
             else:
                 use_features[input_channel] = True
+<<<<<<< Updated upstream
         return use_features
+=======
+        return use_features
+>>>>>>> Stashed changes

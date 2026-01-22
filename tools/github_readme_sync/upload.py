@@ -129,4 +129,8 @@ def load_doc(file_path: str, category_slug: str, child: dict):
 
     with file_path.open(encoding="utf-8") as file:
         body = file.read()
+<<<<<<< Updated upstream
         return process_markdown(body, child["slug"])
+=======
+        return process_markdown(body, child["slug"])
+>>>>>>> Stashed changes

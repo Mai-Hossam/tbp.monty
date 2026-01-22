@@ -20,6 +20,7 @@ from tbp.monty.frameworks.models.motor_system_state import AgentState
 from tbp.monty.frameworks.models.states import GoalState
 from tbp.monty.frameworks.sensors import SensorID
 
+<<<<<<< Updated upstream
 __all__ = [
     "AgentObservations",
     "GoalStateGenerator",
@@ -32,6 +33,8 @@ __all__ = [
     "SensorObservations",
 ]
 
+=======
+>>>>>>> Stashed changes
 
 class SensorObservations(TypedDict, total=False):
     """Observations from a sensor."""
@@ -364,14 +367,23 @@ class SensorModule(metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:
         """This method is called before each episode.
 
         Args:
             rng: The random number generator.
         """
+=======
+    def pre_episode(self):
+        """This method is called before each episode."""
+>>>>>>> Stashed changes
         pass
 
     def propose_goal_states(self) -> list[GoalState]:
         """Return the goal-states proposed by this Sensor Module."""
+<<<<<<< Updated upstream
         return []
+=======
+        return []
+>>>>>>> Stashed changes

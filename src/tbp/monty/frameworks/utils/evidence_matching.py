@@ -534,4 +534,8 @@ def evidence_update_threshold(
 class InvalidEvidenceThresholdConfig(ValueError):
     """Raised when the evidence update threshold is invalid."""
 
+<<<<<<< Updated upstream
     pass
+=======
+    pass
+>>>>>>> Stashed changes

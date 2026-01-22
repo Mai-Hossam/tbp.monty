@@ -9,8 +9,11 @@
 # https://opensource.org/licenses/MIT.
 
 
+<<<<<<< Updated upstream
 import logging
 
+=======
+>>>>>>> Stashed changes
 import torch
 from tqdm import tqdm
 
@@ -19,8 +22,11 @@ from tbp.monty.frameworks.experiments.object_recognition_experiments import (
     MontyObjectRecognitionExperiment,
 )
 
+<<<<<<< Updated upstream
 logger = logging.getLogger(__name__)
 
+=======
+>>>>>>> Stashed changes
 
 class DataCollectionExperiment(MontyObjectRecognitionExperiment):
     """Collect data in environment without performing inference.
@@ -73,6 +79,7 @@ class DataCollectionExperiment(MontyObjectRecognitionExperiment):
 
     def pre_episode(self):
         """Pre episode where we pass target object to the model for logging."""
+<<<<<<< Updated upstream
         if self.experiment_mode is ExperimentMode.TRAIN:
             logger.info(
                 f"running train epoch {self.train_epochs} "
@@ -88,6 +95,10 @@ class DataCollectionExperiment(MontyObjectRecognitionExperiment):
 
         self.model.pre_episode(self.rng)
         self.env_interface.pre_episode(self.rng)
+=======
+        self.model.pre_episode()
+        self.env_interface.pre_episode()
+>>>>>>> Stashed changes
         self.max_steps = self.max_train_steps
         self.logger_handler.pre_episode(self.logger_args)
         if self.show_sensor_output:

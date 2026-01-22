@@ -42,12 +42,17 @@ from tbp.monty.frameworks.actions.actions import (
     VectorXYZ,
 )
 from tbp.monty.frameworks.agents import AgentID
+<<<<<<< Updated upstream
 from tbp.monty.frameworks.environments.environment import SemanticID
+=======
+from tbp.monty.frameworks.environments.embodied_environment import SemanticID
+>>>>>>> Stashed changes
 from tbp.monty.frameworks.models.motor_system_state import AgentState, MotorSystemState
 from tbp.monty.frameworks.sensors import SensorID
 from tbp.monty.frameworks.utils.spatial_arithmetics import get_angle_beefed_up
 from tbp.monty.frameworks.utils.transform_utils import scipy_to_numpy_quat
 
+<<<<<<< Updated upstream
 __all__ = [
     "BasePolicy",
     "GetGoodView",
@@ -63,6 +68,8 @@ __all__ = [
     "get_perc_on_obj_semantic",
 ]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -151,7 +158,11 @@ class MotorPolicy(abc.ABC):
 class BasePolicy(MotorPolicy):
     def __init__(
         self,
+<<<<<<< Updated upstream
         rng: np.random.RandomState,
+=======
+        rng,
+>>>>>>> Stashed changes
         action_sampler_args: dict,
         action_sampler_class: type[ActionSampler],
         agent_id: AgentID,
@@ -851,7 +862,11 @@ class InformedPolicy(BasePolicy, JumpToGoalStateMixin):
         if self.use_goal_state_driven_actions:
             JumpToGoalStateMixin.pre_episode(self, rng)
 
+<<<<<<< Updated upstream
         return super().pre_episode(rng)
+=======
+        return super().pre_episode()
+>>>>>>> Stashed changes
 
     ###
     # Methods that define behavior of __call__
@@ -1017,6 +1032,13 @@ class NaiveScanPolicy(InformedPolicy):
             # python loop statements using iterators.
             # See https://docs.python.org/3/library/exceptions.html#StopIteration
             raise StopIteration
+<<<<<<< Updated upstream
+=======
+
+        self.check_cycle_action()
+        self.step_on_action += 1
+        return self._naive_scan_actions[self.current_action_id]
+>>>>>>> Stashed changes
 
         self.check_cycle_action()
         self.step_on_action += 1
@@ -1093,7 +1115,11 @@ class SurfacePolicy(InformedPolicy):
         self.attempting_to_find_object: bool = False
         self.last_surface_policy_action: Action | None = None
 
+<<<<<<< Updated upstream
     def pre_episode(self, rng: np.random.RandomState) -> None:
+=======
+    def pre_episode(self):
+>>>>>>> Stashed changes
         self.tangential_angle = 0
         self.action = None  # Reset the first action for every episode
         self.touch_search_amount = 0  # Track how many rotations the agent has made
@@ -1103,7 +1129,11 @@ class SurfacePolicy(InformedPolicy):
 
         self.last_surface_policy_action = None
 
+<<<<<<< Updated upstream
         return super().pre_episode(rng)
+=======
+        return super().pre_episode()
+>>>>>>> Stashed changes
 
     def touch_object(
         self, raw_observation, view_sensor_id: str, state: MotorSystemState

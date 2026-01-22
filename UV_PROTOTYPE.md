@@ -12,4 +12,8 @@ Some notes on how to set up this environment.
 uv venv -p 3.9.22 --seed
 uv pip install torch==1.13.1 # Use the version from pyproject.toml
 uv sync --extra dev --extra simulator_mujoco
+<<<<<<< Updated upstream
 ```
+=======
+```
+>>>>>>> Stashed changes

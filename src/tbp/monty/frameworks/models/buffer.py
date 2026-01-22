@@ -739,4 +739,8 @@ BufferEncoder.register(torch.Tensor, lambda obj: obj.cpu().numpy())
 BufferEncoder.register(qt.quaternion, lambda obj: qt.as_float_array(obj))
 BufferEncoder.register(Action, ActionJSONEncoder)
 BufferEncoder.register(DictConfig, lambda obj: OmegaConf.to_object(obj))
+<<<<<<< Updated upstream
 BufferEncoder.register(ListConfig, lambda obj: OmegaConf.to_object(obj))
+=======
+BufferEncoder.register(ListConfig, lambda obj: OmegaConf.to_object(obj))
+>>>>>>> Stashed changes

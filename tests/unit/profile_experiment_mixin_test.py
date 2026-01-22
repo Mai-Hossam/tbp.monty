@@ -10,6 +10,11 @@ from __future__ import annotations
 
 import pytest
 
+<<<<<<< Updated upstream
+=======
+from tbp.monty.frameworks.experiments.monty_experiment import ExperimentMode
+
+>>>>>>> Stashed changes
 pytest.importorskip(
     "habitat_sim",
     reason="Habitat Sim optional dependency not installed.",
@@ -22,11 +27,15 @@ from unittest import TestCase
 
 import hydra
 
+<<<<<<< Updated upstream
 from tbp.monty.frameworks.experiments.mode import ExperimentMode
 from tbp.monty.frameworks.experiments.monty_experiment import MontyExperiment
 from tbp.monty.frameworks.experiments.profile import (
     ProfileExperimentMixin,
 )
+=======
+from tbp.monty.frameworks.experiments import MontyExperiment, ProfileExperimentMixin
+>>>>>>> Stashed changes
 
 
 class InheritanceProfileExperimentMixinTest(TestCase):
@@ -155,4 +164,8 @@ class ProfileExperimentMixinTest(TestCase):
                 "profile-eval_epoch_0_episode_2.csv",
             },
         )
+<<<<<<< Updated upstream
         self.spot_check_profile_files()
+=======
+        self.spot_check_profile_files()
+>>>>>>> Stashed changes

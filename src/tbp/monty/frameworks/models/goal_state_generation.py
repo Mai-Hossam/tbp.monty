@@ -17,8 +17,11 @@ from tbp.monty.frameworks.models.abstract_monty_classes import GoalStateGenerato
 from tbp.monty.frameworks.models.states import GoalState
 from tbp.monty.frameworks.utils.communication_utils import get_state_from_channel
 
+<<<<<<< Updated upstream
 __all__ = ["EvidenceGoalStateGenerator", "GraphGoalStateGenerator"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 

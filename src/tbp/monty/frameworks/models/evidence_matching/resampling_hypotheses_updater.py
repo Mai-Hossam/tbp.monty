@@ -658,4 +658,8 @@ class ResamplingHypothesesUpdater:
             poses=selected_rotations,
             evidence=selected_feature_evidence,
             possible=possible_hyp,
+<<<<<<< Updated upstream
         )
+=======
+        )
+>>>>>>> Stashed changes

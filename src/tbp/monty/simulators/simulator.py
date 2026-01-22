@@ -90,4 +90,8 @@ class Simulator(Protocol):
 
     def close(self) -> None:
         """Close any resources used by the simulator."""
+<<<<<<< Updated upstream
         ...
+=======
+        ...
+>>>>>>> Stashed changes

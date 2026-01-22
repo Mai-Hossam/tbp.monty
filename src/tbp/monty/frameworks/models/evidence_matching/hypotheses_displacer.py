@@ -404,4 +404,8 @@ class DefaultHypothesesDisplacer:
         pose_evidence_weighted += (
             surface_normal_evidence * surface_normal_weight + cd1_evidence * cd1_weight
         )
+<<<<<<< Updated upstream
         return pose_evidence_weighted
+=======
+        return pose_evidence_weighted
+>>>>>>> Stashed changes

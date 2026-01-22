@@ -424,4 +424,8 @@ def build_point_cloud_graph(locations, features, feature_mapping):
     Returns:
         A NumpyGraph containing the observed features at locations.
     """
+<<<<<<< Updated upstream
     return NumpyGraph(dict(x=features, pos=locations, feature_mapping=feature_mapping))
+=======
+    return NumpyGraph(dict(x=features, pos=locations, feature_mapping=feature_mapping))
+>>>>>>> Stashed changes

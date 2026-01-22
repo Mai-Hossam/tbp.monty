@@ -499,4 +499,8 @@ def possible_sensed_directions(
         possible_s_d = get_more_directions_in_plane(
             sensed_directions, num_hyps_per_node
         )
+<<<<<<< Updated upstream
     return possible_s_d
+=======
+    return possible_s_d
+>>>>>>> Stashed changes

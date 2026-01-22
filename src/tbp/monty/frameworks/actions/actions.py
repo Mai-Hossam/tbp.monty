@@ -688,4 +688,8 @@ class ActionJSONDecoder(JSONDecoder):
                 rotation_degrees=obj["rotation_degrees"],
             )
 
+<<<<<<< Updated upstream
         raise ValueError(f"Invalid action object: unknown action '{action}'.")
+=======
+        raise ValueError(f"Invalid action object: unknown action '{action}'.")
+>>>>>>> Stashed changes

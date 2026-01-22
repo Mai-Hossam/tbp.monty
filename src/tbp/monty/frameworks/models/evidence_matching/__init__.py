@@ -5,4 +5,8 @@
 #
 # Use of this source code is governed by the MIT
 # license that can be found in the LICENSE file or at
+<<<<<<< Updated upstream
 # https://opensource.org/licenses/MIT.
+=======
+# https://opensource.org/licenses/MIT.
+>>>>>>> Stashed changes

@@ -24,4 +24,8 @@ def get_edge_index(graph, previous_node, new_node) -> int | None:
     mask = (graph.edge_index[0] == previous_node) & (graph.edge_index[1] == new_node)
     if mask.any():
         return mask.nonzero().view(-1)[0].item()
+<<<<<<< Updated upstream
     return None
+=======
+    return None
+>>>>>>> Stashed changes

@@ -20,8 +20,11 @@ from tbp.monty.frameworks.models.object_model import GraphObjectModel
 from tbp.monty.frameworks.utils.graph_matching_utils import is_in_ranges
 from tbp.monty.frameworks.utils.sensor_processing import point_pair_features
 
+<<<<<<< Updated upstream
 __all__ = ["DisplacementGraphLM", "DisplacementGraphMemory"]
 
+=======
+>>>>>>> Stashed changes
 logger = logging.getLogger(__name__)
 
 
@@ -55,7 +58,11 @@ class DisplacementGraphLM(GraphLM):
                 thresholds based on e.g. surface normal angle difference, or principal
                 curvature magnitude difference.
         """
+<<<<<<< Updated upstream
         super().__init__(rng=rng)
+=======
+        super().__init__()
+>>>>>>> Stashed changes
         self.graph_memory = DisplacementGraphMemory(
             graph_delta_thresholds=graph_delta_thresholds,
             k=k,
@@ -538,4 +545,8 @@ class DisplacementGraphMemory(GraphMemory):
         if graph_id not in self.models_in_memory:
             self.models_in_memory[graph_id] = {}
         self.models_in_memory[graph_id][input_channel] = model
+<<<<<<< Updated upstream
         logger.info(f"Added new graph with id {graph_id} to memory.")
+=======
+        logger.info(f"Added new graph with id {graph_id} to memory.")
+>>>>>>> Stashed changes
